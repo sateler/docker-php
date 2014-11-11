@@ -14,6 +14,7 @@ RUN apt-get install -y \
 	&& apt-get clean
 
 RUN a2ensite 000-default
+RUN a2enmod rewrite
 
 WORKDIR /var/www/html
 
