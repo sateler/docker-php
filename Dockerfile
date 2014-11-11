@@ -6,6 +6,13 @@ RUN apt-get update && apt-get install -y \
 	apache2 \
 	&& apt-get clean
 
+# common modules
+RUN apt-get install -y \
+	php5-mysql \
+	php5-mcrypt \
+	php5-curl \
+	&& apt-get clean
+
 RUN a2ensite 000-default
 
 WORKDIR /var/www/html
