@@ -13,6 +13,8 @@ RUN apt-get install -y \
 	php5-curl \
 	&& apt-get clean
 
+ADD default /etc/apache2/sites-available/
+
 RUN a2ensite 000-default
 RUN a2enmod rewrite
 
