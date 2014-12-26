@@ -13,6 +13,9 @@ RUN apt-get install -y \
 	php5-curl \
 	&& apt-get clean
 
+RUN sed -i -e 's|^ErrorLog.*|ErrorLog /proc/self/fd/2|' /etc/apache2/apache2.conf
+
+
 ADD default /etc/apache2/sites-available/
 
 RUN a2ensite 000-default
