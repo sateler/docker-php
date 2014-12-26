@@ -21,7 +21,7 @@ ADD default /etc/apache2/sites-available/
 RUN a2ensite 000-default
 RUN a2enmod rewrite
 
-WORKDIR /var/www/html
+WORKDIR /var/www/
 
 CMD . /etc/apache2/envvars && exec apache2 -DFOREGROUND
 
