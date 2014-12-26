@@ -21,7 +21,7 @@
 		Allow from all
 	</Directory>
 
-	ErrorLog /proc/self/fd/2
+	ErrorLog /proc/self/fd/1
 
 	# Possible values include: debug, info, notice, warn, error, crit,
 	# alert, emerg.
