@@ -4,6 +4,7 @@ RUN apt-get update && apt-get install -y \
 	apache2-mpm-prefork \
 	apache2 \
 	libapache2-mod-php5 \
+	php5-cli \
 	php5-mysql \
 	php5-mcrypt \
 	php5-curl \
