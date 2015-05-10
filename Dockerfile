@@ -15,6 +15,7 @@ RUN sed -i -e 's|^ErrorLog.*|ErrorLog /proc/self/fd/2|' /etc/apache2/apache2.con
 
 
 ADD default /etc/apache2/sites-available/
+ADD mpm_prefork.conf /etc/apache2/conf.d/
 
 RUN a2ensite 000-default && a2enmod rewrite
 
