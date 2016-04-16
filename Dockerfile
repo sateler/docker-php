@@ -1,4 +1,4 @@
-FROM debian:wheezy
+FROM debian:jessie
 
 RUN apt-get update && apt-get install -y \
 	apache2-mpm-prefork \
@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
 RUN sed -i -e 's|^ErrorLog.*|ErrorLog /proc/self/fd/2|' /etc/apache2/apache2.conf
 
 
-ADD default /etc/apache2/sites-available/
+ADD default /etc/apache2/sites-available/000-default.conf
 ADD mpm_prefork.conf /etc/apache2/conf.d/
 
 RUN a2ensite 000-default && a2enmod rewrite
