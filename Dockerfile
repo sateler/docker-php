@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y \
 	php5-mcrypt \
 	php5-curl \
 	php5-gd \
+	php5-intl \
 	&& apt-get clean
 
 RUN sed -i -e 's|^ErrorLog.*|ErrorLog /proc/self/fd/2|' /etc/apache2/apache2.conf
