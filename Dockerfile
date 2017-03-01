@@ -1,14 +1,16 @@
 FROM debian:stretch
 
 RUN apt-get update && apt-get install -y \
-	apache2-mpm-prefork \
 	apache2 \
-	libapache2-mod-php5 \
-	php5-cli \
-	php5-mysql \
-	php5-mcrypt \
-	php5-curl \
-	php5-gd \
+	libapache2-mod-php \
+	php-mbstring \
+	php-intl \
+	php-json \
+	php-cli \
+	php-mysql \
+	php-mcrypt \
+	php-curl \
+	php-gd \
 	&& apt-get clean
 
 RUN sed -i -e 's|^ErrorLog.*|ErrorLog /proc/self/fd/2|' /etc/apache2/apache2.conf
