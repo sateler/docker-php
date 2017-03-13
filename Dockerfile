@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y \
 	php-mcrypt \
 	php-curl \
 	php-gd \
+	php-xml \
 	&& apt-get clean
 
 RUN sed -i -e 's|^ErrorLog.*|ErrorLog /proc/self/fd/2|' /etc/apache2/apache2.conf
