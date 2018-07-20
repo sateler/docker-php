@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y \
 	php-gd \
 	php-xml \
 	php-zip \
+	php-xdebug \
 	&& apt-get clean
 
 RUN sed -i -e 's|^ErrorLog.*|ErrorLog /proc/self/fd/2|' /etc/apache2/apache2.conf
