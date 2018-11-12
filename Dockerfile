@@ -3,15 +3,14 @@ FROM debian:stretch
 RUN apt-get update && apt-get install -y \
     wget \
     apt-transport-https \
-    lsb-release \
     ca-certificates
 
 RUN wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
-RUN sh -c 'echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list'
+RUN sh -c 'echo "deb https://packages.sury.org/php/ stretch main" > /etc/apt/sources.list.d/php.list'
 
 RUN apt-get update && apt-get install -y \
 	apache2 \
-	libapache2-mod-php \
+	libapache2-mod-php7.2 \
 	php7.2-mbstring \
 	php7.2-intl \
 	php7.2-json \
@@ -42,5 +41,3 @@ RUN a2ensite 000-default && a2enmod rewrite
 WORKDIR /var/www/
 
 CMD . /etc/apache2/envvars && exec apache2 -DFOREGROUND
-
-
