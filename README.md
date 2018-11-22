@@ -1,1 +1,1 @@
-Base image for apache + php projects
+Base image for [apache +] php projects
