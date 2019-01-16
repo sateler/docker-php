@@ -1,4 +1,4 @@
-FROM php:7.0-fpm
+FROM php:7.2-fpm
 
 # PHP Extension Requirements
 RUN apt-get update && apt-get install -y \
