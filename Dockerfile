@@ -23,3 +23,7 @@ RUN ln -s /usr/lib/x86_64-linux-gnu/libsybdb.a /usr/lib/libsybdb.a
 RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-install -j$(nproc) intl pdo_mysql gd zip soap pdo_dblib calendar bcmath \
     && docker-php-ext-enable xdebug
+
+# Add newer icu txdata res
+COPY ./icu2019a44le /icu2019a44le
+ENV ICU_TIMEZONE_FILES_DIR /icu2019a44le
