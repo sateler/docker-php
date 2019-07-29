@@ -27,3 +27,6 @@ RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-di
 # Add newer icu txdata res
 COPY ./icu2019a44le /icu2019a44le
 ENV ICU_TIMEZONE_FILES_DIR /icu2019a44le
+
+# Add composer binary
+COPY --from=composer:1.5 /usr/bin/composer /usr/bin/composer
