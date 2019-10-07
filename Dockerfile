@@ -15,7 +15,12 @@ RUN apt-get update && apt-get install -y \
     libxml2-dev \
     # For zip extension
     libzip-dev \
+    # Requirements for composer's wkhtmltopdf package pdf generation
+    libxrender1 \
+    libfontconfig1 \
+    # Clean
     && apt-get clean \
+    # For xdebug
     && pecl install xdebug
 
 # for php pdo_dblib
