@@ -17,7 +17,12 @@ RUN apt-get update && apt-get install -y \
     libzip-dev \
     # For unpacking composer packages
     unzip \
+    # Requirements for composer's wkhtmltopdf package pdf generation
+    libxrender1 \
+    libfontconfig1 \
+    # Clean
     && apt-get clean \
+    # For xdebug
     && pecl install xdebug
 
 # for php pdo_dblib (sybase)
